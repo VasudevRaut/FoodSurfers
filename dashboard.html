@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard with Navbar</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        /* Add some basic styles for better presentation */
+        #searchDropdown {
+            width: 200px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <input type="text" id="searchInput" placeholder="Search locations">
+
+<!-- Add a select element with options -->
+
+<select id="searchDropdown">
+    <option value="location1">vasudev 1</option>
+    <option value="location2">dhiraj 2</option>
+    <option value="location3">vasudev raut 3</option>
+    <option value="location1">vasudev 1</option>
+    <option value="location2">dhiraj 2</option>
+    <option value="location3">vasudev raut 3</option>
+    <option value="location1">vasudev 1</option>
+    <option value="location2">dhiraj 2</option>
+    <option value="location3">vasudev raut 3</option>
+    <option value="location1">vasudev 1</option>
+    <option value="location2">dhiraj 2</option>
+    <option value="location3">vasudev raut 3</option>
+</select>
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <div class="container">
+        <div class="picture">
+            <img src="Images/d2.jpg" alt="Description Image">
+        </div>
+        <div class="description">
+            <h1>Description Title</h1>
+
+
+
+            
+            <div class="card">
+                <div class="inBox">
+                    <div class="desc">
+                        <h2><img src="Images/feature-img-1.png" alt=""></h2>
+                        <h2 style="padding: 2px; border-bottom: 0;">Shree Ram</h2>
+                        <p>Mess Menu</p>
+                        <ul>
+                            <li>Palak Panner</li>
+                            <li>Aloo Mattar</li>
+                            <li>Gobi Sukki</li>
+                            <li>Onion</li>
+                        </ul>
+                    </div>
+                    <div class="rating">
+                        4.3
+                    </div>
+                </div>
+            </div>
+
+            
+         </div>
+
+
+
+    </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    // Get the input and select elements
+    var input = document.getElementById('searchInput');
+    var dropdown = document.getElementById('searchDropdown');
+
+    // Add event listener for input changes
+    input.addEventListener('input', function () {
+        var filter = input.value.toUpperCase(); // Convert input value to uppercase for case-insensitive search
+
+        // Loop through each option in the dropdown
+        for (var i = 0; i < dropdown.options.length; i++) {
+            var option = dropdown.options[i];
+            var txtValue = option.text.toUpperCase();
+
+            // Check if the option's text contains the filter text
+            if (txtValue.indexOf(filter) > -1) {
+                option.style.display = ''; // Show the option
+            } else {
+                option.style.display = 'none'; // Hide the option
+            }
+        }
+    });
+</script>

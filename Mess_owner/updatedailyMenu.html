@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .switch-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .switch-label label {
+            flex: 1;
+            text-align: left;
+        }
+
+        .switch-label input[type="checkbox"] {
+            display: none;
+        }
+
+        .switch-slider {
+            position: relative;
+            width: 50px;
+            height: 24px;
+            background-color: #ccc;
+            border-radius: 12px;
+        }
+
+        .switch-slider:before {
+            content: 'OFF';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #fff;
+            color: #333;
+            transition: transform 0.2s;
+            transform: translateX(0);
+        }
+
+        input[type="checkbox"]:checked + .switch-slider:before {
+            content: 'ON';
+            transform: translateX(26px);
+        }
+
+        .choice-box {
+            margin-bottom: 20px;
+        }
+
+        .choice-box label {
+            font-weight: bold;
+        }
+
+        #meal-choice {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .menu-update {
+            margin-bottom: 20px;
+        }
+
+        .menu-update label {
+            font-weight: bold;
+        }
+
+        #menu-text {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #update-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #update-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <title>Menu Update</title>
+</head>
+<body>
+    <div class="menu-container">
+        <h1>Menu Update</h1>
+        <div class="switch-label">
+            <label for="mess-status">Mess Status:</label>
+            <label class="switch-slider-label" for="mess-status">
+                <input type="checkbox" id="mess-status" />
+                <span class="switch-slider"></span>
+            </label>
+        </div>
+        <div class="choice-box">
+            <label for="meal-choice">Choose a meal:</label>
+            <select id="meal-choice">
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
+        </div>
+        <div class="menu-update">
+            <label for="menu-text">Update Menu:</label>
+            <textarea id="menu-text" rows="5" cols="40" placeholder="Enter your menu here..."></textarea>
+        </div>
+        <button id="update-button">Update Menu</button>
+    </div>
+</body>
+</html>
